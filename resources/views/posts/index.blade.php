@@ -137,13 +137,12 @@
                                         <img src="{{asset('images/chat-bubble.png')}}" alt="" class="action-icon me-1 ms-3">
                                         <p class="text-small comment-count"></p>
                                     </div>
-                                    <div class="d-flex share">
+                                    <div class="d-flex share share-icon" data-id="{{ $post->id }}">
                                         <img src="{{asset('images/share.png')}}" alt="" class="action-icon me-1 ms-3">
                                         <p class="text-small">3</p>
                                     </div>
                                 </div>
                             </div>
-                            <div id="testOnly"></div>
                            <div class="comments-section-{{$post->id}}" data-id="{{ $post->id }}"></div>
                             <div class="comment-area">
                                 <div class="d-flex my-3 w-100">

@@ -6,6 +6,7 @@ use App\Http\Controllers\PostsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LikesController;
 use App\Http\Controllers\CommentsController;
+use App\Http\Controllers\SharesController;
 
 Route::get('/', [PostsController::class, 'index'])->name('home')->middleware(AuthenticateUser::class);
 
@@ -20,3 +21,4 @@ Route::post('/like', [LikesController::class, 'like_count']);
 Route::post('/comment', [CommentsController::class, 'store']);
 Route::get('/show-comment', [CommentsController::class, 'show']);
 Route::get('/show-comment-count', [CommentsController::class, 'get_comment_count']);
+Route::get('/share', [SharesController::class, 'share_post']);
