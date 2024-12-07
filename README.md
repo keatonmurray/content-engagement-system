@@ -19,3 +19,16 @@ Users can
  Users cannot
   - Create, read, update, and delete contents of other users
   - Access the dashboard without logging in
+
+## ENVIRONMENT SETUP
+
+1. Clone the repository
+2. Locate the .env-example file
+3. Create a .env file and copy the contents from the .env-example file
+4. Setup database credentials
+5. Run php artisan migrate
+6. Install composer dependencies (composer install)
+7. Install npm (npm install)
+8. Install vite (npm install vite)
+9. Run npm run dev
+10. Start the local server (php artisan serve)
