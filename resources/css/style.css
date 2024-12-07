@@ -148,3 +148,7 @@
     height: 435px; 
     width: 100%;
 }
+
+.modal-content {
+    padding: 18px;
+}

@@ -12,6 +12,7 @@ class SharesController extends Controller
     public function share_post(Request $request)
     {   
         $post_id = $request->post_id; 
+        $body = $request->body;
         $get_post = Post::find($post_id);
         $user = Auth::id(); 
 
@@ -19,12 +20,13 @@ class SharesController extends Controller
             "fk_user_id" => $user,
             "fk_post_id" => $post_id,
             "share_count" => 1,
-            "body" => $get_post['body'],
+            "body" => $body,
             "image" => $get_post['image'],
             "created_at" => $get_post['created_at'],
             "updated_at" => $get_post['updated_at']
         ];
 
         Share::create($data);
+         
     }
 }

@@ -23,4 +23,9 @@ class Share extends Model
     {
         return $this->belongsTo(User::class, 'fk_user_id');
     }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class, 'fk_like_id');
+    }
 }

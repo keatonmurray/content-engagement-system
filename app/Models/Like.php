@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\Post;
+use App\Models\Share;
 
 class Like extends Model
 {
@@ -20,4 +21,8 @@ class Like extends Model
         return $this->belongsTo(Post::class, 'fk_post_id');
     }
 
+    public function like()
+    {
+        return $this->belongsTo(Share::class, 'fk_like_id');
+    }
 }

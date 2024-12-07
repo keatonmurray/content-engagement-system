@@ -76,7 +76,7 @@
                         </div>
                         <div class="d-flex mt-3">
                             <img src="{{asset('images/user.png')}}" alt="Profile" class="user">
-                            <textarea class="form-control mb-3 status-textarea" name="body" rows="3" placeholder="What's on your mind?"></textarea>
+                            <textarea class="form-control mb-3 status-textarea" rows="3" name="body" placeholder="What's on your mind?"></textarea>
                         </div>
                         <hr>
                 
@@ -138,10 +138,48 @@
                                         <img src="{{asset('images/chat-bubble.png')}}" alt="" class="action-icon me-1 ms-3">
                                         <p class="text-small comment-count"></p>
                                     </div>
-                                    <div class="d-flex share share-icon" data-id="{{ $post->fk_post_id }}">
-                                        <img src="{{asset('images/share.png')}}" alt="" class="action-icon me-1 ms-3">
+                                    <div class="d-flex share-post-modal share-icon" data-bs-toggle="modal" data-bs-target="#display-share-post-modal">
+                                        <img src="{{ asset('images/share.png') }}" class="action-icon me-1 ms-3">
                                         <p class="text-small">3</p>
                                     </div>
+                                    
+                                    <div class="modal fade" id="display-share-post-modal" tabindex="-1" aria-labelledby="display-share-post-modalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="display-share-post-modalLabel">Share Post</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="d-flex mt-3">
+                                                    <img src="{{asset('images/user.png')}}" alt="Profile" class="user">
+                                                    <textarea class="form-control mb-3 status-textarea" id="body" name="body" rows="3" placeholder="What do you think about this post?"></textarea>
+                                                </div>
+                                                <hr>
+                                        
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex gap-3">
+                                                        <button class="btn btn-action-custom btn-sm">
+                                                            <img src="{{asset('images/group.png')}}" alt="Action" class="action me-2">
+                                                            People
+                                                        </button>
+                                                        <button class="btn btn-action-custom btn-sm">
+                                                            <img src="{{asset('images/location.png')}}" alt="Action" class="action me-2">
+                                                            Check In
+                                                        </button>
+                                                        <button class="btn btn-action-custom btn-sm">
+                                                            <img src="{{asset('images/happy.png')}}" alt="Action" class="action me-2"> 
+                                                            Mood
+                                                        </button>
+                                                    </div>
+                                                    <button class="btn btn-custom btn-sm share" data-id= {{$post->id}}>
+                                                        <i class="fa-solid fa-share me-1"></i>
+                                                        Share
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                            <div class="comments-section-{{$post->id}}" data-id="{{ $post->id }}"></div>
@@ -200,10 +238,49 @@
                                         <img src="{{asset('images/chat-bubble.png')}}" alt="" class="action-icon me-1 ms-3">
                                         <p class="text-small comment-count"></p>
                                     </div>
-                                    <div class="d-flex share share-icon" data-id="{{ $post->id }}">
-                                        <img src="{{asset('images/share.png')}}" alt="" class="action-icon me-1 ms-3">
+                                    
+                                    <div class="d-flex share-post-modal share-icon" data-bs-toggle="modal" data-bs-target="#display-share-post-modal">
+                                        <img src="{{ asset('images/share.png') }}" class="action-icon me-1 ms-3">
                                         <p class="text-small">3</p>
                                     </div>
+                                    
+                                    <div class="modal fade" id="display-share-post-modal" tabindex="-1" aria-labelledby="display-share-post-modalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="display-share-post-modalLabel">Share Post</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="d-flex mt-3">
+                                                    <img src="{{asset('images/user.png')}}" alt="Profile" class="user">
+                                                    <textarea class="form-control mb-3 status-textarea" id="body" rows="3" placeholder="What do you think about this post?"></textarea>
+                                                </div>
+                                                <hr>
+                                        
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex gap-3">
+                                                        <button class="btn btn-action-custom btn-sm">
+                                                            <img src="{{asset('images/group.png')}}" alt="Action" class="action me-2">
+                                                            People
+                                                        </button>
+                                                        <button class="btn btn-action-custom btn-sm">
+                                                            <img src="{{asset('images/location.png')}}" alt="Action" class="action me-2">
+                                                            Check In
+                                                        </button>
+                                                        <button class="btn btn-action-custom btn-sm">
+                                                            <img src="{{asset('images/happy.png')}}" alt="Action" class="action me-2"> 
+                                                            Mood
+                                                        </button>
+                                                    </div>
+                                                    <button class="btn btn-custom btn-sm share" data-id= {{$post->id}}>
+                                                        <i class="fa-solid fa-share me-1"></i>
+                                                        Share
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                            <div class="comments-section-{{$post->id}}" data-id="{{ $post->id }}"></div>
