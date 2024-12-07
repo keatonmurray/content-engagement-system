@@ -12,10 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('likes', function (Blueprint $table) {
-            $table->unsignedBigInteger('fk_post_id'); 
-            $table->foreign('fk_post_id')->references('id')->on('posts')
-                  ->onDelete('cascade') 
-                  ->onUpdate('cascade');
+            $table->integer('like_count');
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::table('likes', function (Blueprint $table) {
+            //
+        });
     }
 };

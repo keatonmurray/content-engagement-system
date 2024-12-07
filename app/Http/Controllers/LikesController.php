@@ -11,9 +11,7 @@
         {
             $post_id = $request->post_id;
 
-            $like = Like::where('fk_post_id', $post_id)
-                        ->first();
-
+            $like = Like::where('fk_post_id', $post_id)->first();
             if (!$like) {
                 $like = Like::create([
                     'like_count' => 1,
@@ -23,7 +21,6 @@
                 $like->increment('like_count');
                 $like->refresh();
             }
-
             return response()->json([
                 'like_count' => $like->like_count,  
                 'fk_post_id' => $post_id,  

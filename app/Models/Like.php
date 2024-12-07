@@ -8,7 +8,7 @@ use App\Models\Post;
 
 class Like extends Model
 {
-    protected $fillable = ['fk_post_id', 'fk_user_id', 'like_count'];
+    protected $fillable = ['fk_post_id', 'like_count'];
 
     public function user()
     {
