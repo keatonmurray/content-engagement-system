@@ -26,6 +26,6 @@ class Share extends Model
 
     public function likes()
     {
-        return $this->hasMany(Like::class, 'fk_like_id');
+        return $this->hasMany(Like::class, 'fk_like_id', 'fk_post_id');
     }
 }

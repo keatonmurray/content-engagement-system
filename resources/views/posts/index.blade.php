@@ -130,9 +130,9 @@
                                     <img src="{{ asset('images/beach.jpg') }}" class="img-fluid post-image" alt="Photo">
                                 </figure>
                                 <div class="d-flex my-2">
-                                    <div class="d-flex heart heart-icon" data-id="{{ $post->id }}">
+                                    <div class="d-flex share-post-heart heart-icon" data-id="{{ $post->fk_post_id }}">
                                         <img src="{{asset('images/heart.png')}}" alt="" class="action-icon me-1">
-                                        {{-- <p class="text-small like-count">{{ $post->likes->first()->like_count ?? 0 }}</p> --}}
+                                        <p class="text-small like-count">{{ $post->likes->first()->like_count ?? 0 }}</p>
                                     </div>
                                     <div class="d-flex comment comment-icon" data-id="{{ $post->id }}">
                                         <img src="{{asset('images/chat-bubble.png')}}" alt="" class="action-icon me-1 ms-3">

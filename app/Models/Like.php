@@ -9,7 +9,7 @@ use App\Models\Share;
 
 class Like extends Model
 {
-    protected $fillable = ['fk_post_id', 'like_count'];
+    protected $fillable = ['fk_like_id', 'fk_post_id', 'like_count'];
 
     public function user()
     {
@@ -21,8 +21,8 @@ class Like extends Model
         return $this->belongsTo(Post::class, 'fk_post_id');
     }
 
-    public function like()
+    public function share()
     {
-        return $this->belongsTo(Share::class, 'fk_like_id');
+        return $this->belongsTo(Share::class, 'fk_like_id', 'fk_post_id');
     }
 }
