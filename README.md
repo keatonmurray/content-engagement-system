@@ -20,7 +20,7 @@ Users can
   - Create, read, update, and delete contents of other users
   - Access the dashboard without logging in
 
-## ENVIRONMENT SETUP
+## Environment Setup
 
 1. Clone the repository
 2. Locate the .env-example file
