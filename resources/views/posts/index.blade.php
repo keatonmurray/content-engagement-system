@@ -171,7 +171,7 @@
                                                             Mood
                                                         </button>
                                                     </div>
-                                                    <button class="btn btn-custom btn-sm share" data-id= {{$post->id}}>
+                                                    <button class="btn btn-custom btn-sm share" data-id= {{$post->fk_post_id}}>
                                                         <i class="fa-solid fa-share me-1"></i>
                                                         Share
                                                     </button>
