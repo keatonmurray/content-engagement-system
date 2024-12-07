@@ -104,8 +104,6 @@
                 </form>
             </div>
 
-            {{-- <div id="test"></div> --}}
-
             @if($shared_posts)
                 @foreach($shared_posts as $post)
                     <div class="card my-5 shadow-sm border-0">
@@ -140,7 +138,7 @@
                                         <img src="{{asset('images/chat-bubble.png')}}" alt="" class="action-icon me-1 ms-3">
                                         <p class="text-small comment-count"></p>
                                     </div>
-                                    <div class="d-flex share share-icon" data-id="{{ $post->id }}">
+                                    <div class="d-flex share share-icon" data-id="{{ $post->fk_post_id }}">
                                         <img src="{{asset('images/share.png')}}" alt="" class="action-icon me-1 ms-3">
                                         <p class="text-small">3</p>
                                     </div>
