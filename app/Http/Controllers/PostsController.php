@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use  App\Models\Post;
+use  App\Models\Share;
 
 
 class PostsController extends Controller
@@ -16,10 +17,12 @@ class PostsController extends Controller
     {   
         $posts = Post::latest()->get(); 
         $user = Auth::user();
+        $shared_posts = Share::latest()->get(); 
 
         $data = [
             'posts' => $posts,
             'user' => $user,
+            'shared_posts' => $shared_posts
         ];
         
         return view('posts.index')->with($data);

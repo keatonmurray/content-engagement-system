@@ -6,10 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Share extends Model
 {
-    protected $fillable = ['fk_post_id', 'fk_share_count'];
+    protected $fillable = [
+        'fk_post_id', 
+        'fk_user_id',
+        'share_count',
+        'body',
+        'image',
+    ];
 
     public function posts()
     {
         return $this->belongsTo(Post::class, 'fk_post_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'fk_user_id');
     }
 }

@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use App\Models\Post;
 use App\Models\Like;
 use App\Models\Comment;
+use App\Models\Share;
 
 class User extends Authenticatable
 {
@@ -63,5 +64,10 @@ class User extends Authenticatable
     public function comments()
     {
         return $this->hasMany(Comment::class, 'fk_user_id');
+    }
+
+    public function shares()
+    {
+        return $this->hasMany(Share::class, 'fk_user_id');
     }
 }

@@ -17,7 +17,13 @@ return new class extends Migration
             $table->foreign('fk_post_id')->references('id')->on('posts')
                   ->onDelete('cascade') 
                   ->onUpdate('cascade');
+            $table->unsignedBigInteger('fk_user_id');
+            $table->foreign('fk_user_id')->references('id')->on('users')
+                ->onDelete('cascade') 
+                ->onUpdate('cascade');
             $table->string('share_count');
+            $table->string('body');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

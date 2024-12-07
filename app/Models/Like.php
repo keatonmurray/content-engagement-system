@@ -19,4 +19,5 @@ class Like extends Model
     {
         return $this->belongsTo(Post::class, 'fk_post_id');
     }
+
 }
