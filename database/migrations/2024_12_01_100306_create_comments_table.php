@@ -25,6 +25,7 @@ return new class extends Migration
             ->onUpdate('cascade');
 
             $table->string('comment_count');
+            $table->longText('comment');
 
             $table->timestamps();
         });
