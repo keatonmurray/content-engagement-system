@@ -28,4 +28,9 @@ class Share extends Model
     {
         return $this->hasMany(Like::class, 'fk_like_id', 'fk_post_id');
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'fk_comment_id');
+    }
 }

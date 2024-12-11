@@ -26,7 +26,7 @@ class SharesController extends Controller
             "updated_at" => $get_post['updated_at']
         ];
 
-        Share::create($data);
+        Post::create($data);
          
     }
 }
